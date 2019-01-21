@@ -35,7 +35,6 @@
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.7",
     "ts-jest": "^23.10.1",
-    "ts-node": "^7.0.1",
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.8.0",
     "tslint-config-prettier": "^1.13.0",
