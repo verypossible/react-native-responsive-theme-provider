@@ -64,8 +64,6 @@ import ThemeProvider from 'react-native-responsive-theme-provider';
 const theme = {
   bigColor: 'blue',
   color: 'red',
-  screen: Dimensions.get('screen'),
-  window: Dimensions.get('window'),
 };
 
 const ThemedText = styled(Text)`
@@ -85,25 +83,23 @@ with new screen and width properties.
 ## Typescript
 
 ```js
-import { Dimensions, Text } from 'react-native';
+import { Text } from 'react-native';
 import { ThemedStyledComponentsModule } from 'styled-components';
 import styledComponents from 'styled-components/native';
 import ThemeProvider, { ThemeDimensionProps } from 'react-native-responsive-theme-provider';
 
-interface ThemeInterface extends ThemeDimensionProps {
+interface ThemeInterface {
   bigColor: string;
   color: string;
 }
 
 const { default: styled } = styledComponents as ThemedStyledComponentsModule<
-  ThemeInterface
+  ThemeInterface & ThemeDimensionProps
 >;
 
 const theme: ThemeInterface = {
   bigColor: 'blue',
   color: 'red',
-  screen: Dimensions.get('screen'),
-  window: Dimensions.get('window'),
 };
 
 // now we have typed support for props.theme

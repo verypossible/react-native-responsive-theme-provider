@@ -7,20 +7,18 @@ import { ThemedStyledComponentsModule } from 'styled-components';
 import ThemeProvider, { ThemeDimensionProps } from './index';
 jest.mock('Dimensions');
 
-interface ThemeInterface extends ThemeDimensionProps {
+interface ThemeInterface {
   bigColor: string;
   color: string;
 }
 
 const { default: styled } = styledComponents as ThemedStyledComponentsModule<
-  ThemeInterface
+  ThemeInterface & ThemeDimensionProps
 >;
 
 const theme: ThemeInterface = {
   bigColor: 'blue',
   color: 'red',
-  screen: Dimensions.get('screen'),
-  window: Dimensions.get('window'),
 };
 
 describe('ThemeProvider', () => {
@@ -44,7 +42,7 @@ describe('ThemeProvider', () => {
   });
 
   it('should have access to screen size inside theme', () => {
-    const Comp = styled(Text).attrs((props: any) => ({
+    const Comp = styled(Text).attrs((props) => ({
       'data-color':
         props.theme.screen.width > 50
           ? props.theme.bigColor
@@ -66,7 +64,7 @@ describe('ThemeProvider', () => {
   });
 
   it('should respond to screen change', () => {
-    const Comp = styled(Text).attrs((props: any) => ({
+    const Comp = styled(Text).attrs((props) => ({
       'data-color':
         props.theme.screen.width > 50
           ? props.theme.bigColor
