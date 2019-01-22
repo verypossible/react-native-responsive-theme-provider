@@ -2,6 +2,15 @@ import * as React from 'react';
 import { Dimensions, ScaledSize } from 'react-native';
 const { ThemeProvider } = require('styled-components/native');
 
+export const getScreen = (props: ThemeInterface) => props.theme.screen;
+export const getScreenWidth = (props: ThemeInterface) => getScreen(props).width;
+export const getWindow = (props: ThemeInterface) => props.theme.window;
+export const getWindowWidth = (props: ThemeInterface) => getWindow(props).width;
+
+interface ThemeInterface {
+  theme: ThemeDimensionProps;
+}
+
 export interface ThemeDimensionProps {
   window: ScaledSize;
   screen: ScaledSize;

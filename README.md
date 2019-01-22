@@ -113,3 +113,41 @@ const App = () => (
   </ThemeProvider>
 );
 ```
+
+## Selectors
+
+### getScreen
+
+alias for `props.theme.screen`
+
+### getScreenWidth
+
+alias for `props.theme.screen.width`
+
+### getWindow
+
+alias from `props.theme.window`
+
+### getWindowWidth
+
+alias from `props.theme.window.width`
+
+```js
+import { Dimensions, Text } from 'react-native';
+import ThemeProvider, { getScreenWidth } from 'react-native-responsive-theme-provider';
+
+const theme = {
+  bigColor: 'blue',
+  color: 'red',
+};
+
+const ThemedText = styled(Text)`
+  color: ${(props) => getScreenWidth(props) > 800 ? props.theme.bigColor : props.theme.color}
+`
+
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <ThemedText>Some text</ThemedText>
+  </ThemeProvider>
+);
+```
