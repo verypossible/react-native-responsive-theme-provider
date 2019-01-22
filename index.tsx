@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Dimensions, ScaledSize } from 'react-native';
-import { ThemeProvider } from 'styled-components';
+const { ThemeProvider } = require('styled-components/native');
 
 export interface ThemeDimensionProps {
   window: ScaledSize;
