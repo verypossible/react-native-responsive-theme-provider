@@ -1,4 +1,4 @@
-# react-native-theme-provider
+# react-native-responsive-theme-provider
 
 `Dimensions` aware styled-components theme provider for responsive theming in react-native
 
@@ -59,7 +59,7 @@ yarn add @very/react-native-theme-provider
 
 ```js
 import { Dimensions, Text } from 'react-native';
-import ThemeProvider from '@very/react-native-theme-provider';
+import ThemeProvider from 'react-native-responsive-theme-provider';
 
 const theme = {
   bigColor: 'blue',
@@ -88,7 +88,7 @@ with new screen and width properties.
 import { Dimensions, Text } from 'react-native';
 import { ThemedStyledComponentsModule } from 'styled-components';
 import styledComponents from 'styled-components/native';
-import ThemeProvider, { ThemeDimensionProps } from '@very/react-native-theme-provider';
+import ThemeProvider, { ThemeDimensionProps } from 'react-native-responsive-theme-provider';
 
 interface ThemeInterface extends ThemeDimensionProps {
   bigColor: string;

@@ -1,5 +1,5 @@
 {
-  "name": "react-native-theme-provider",
+  "name": "react-native-responsive-theme-provider",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -8,7 +8,7 @@
   "author": "Eric Bower",
   "repository": {
     "type": "git",
-    "url": "git://github.com/verypossible/react-native-theme-provider.git"
+    "url": "git://github.com/verypossible/react-native-responsive-theme-provider.git"
   },
   "scripts": {
     "build": "tsc",
